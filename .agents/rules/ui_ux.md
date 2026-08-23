@@ -11,3 +11,7 @@
 ## 3. Reusable Components
 - Break down complex UI sections into smaller, reusable Blade components or partials (`resources/views/layouts/partials/` or `resources/views/components/`).
 - If a UI block is repeated, use a `@foreach` loop with dynamic data rather than copying and pasting HTML blocks.
+
+## 4. Design Consistency (Uniformity)
+- **Global Consistency**: Every page in the project MUST share the exact same design language. 
+- **Elements & Layout**: Colors, button styles, positioning, and overall layout must remain identical and consistent across all screens. Do not introduce new colors or button styles on a per-page basis; always reuse global CSS classes or Blade components.
