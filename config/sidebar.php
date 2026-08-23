@@ -10,29 +10,7 @@ return [
     [
         'title' => 'Tickets',
         'icon' => 'bi bi-ticket',
-        'submenu' => [
-            [
-                'title' => 'All Tickets',
-                'icon' => 'bi bi-circle',
-                'url' => '#',
-            ],
-            [
-                'title' => 'My Tickets',
-                'icon' => 'bi bi-circle',
-                'submenu' => [
-                    [
-                        'title' => 'Open',
-                        'icon' => 'bi bi-dot',
-                        'url' => '#',
-                    ],
-                    [
-                        'title' => 'Closed',
-                        'icon' => 'bi bi-dot',
-                        'url' => '#',
-                    ],
-                ]
-            ]
-        ]
+        'url' => '#',
     ],
     [
         'header' => 'ADMINISTRATION',
