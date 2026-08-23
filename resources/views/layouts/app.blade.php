@@ -56,6 +56,7 @@
         </footer>
     </div>
     
+    @include('layouts.partials.notifications')
     @stack('scripts')
 </body>
 </html>

@@ -19,3 +19,7 @@
 ## 5. Forms & Validation
 - **No HTML Validation**: Do NOT use HTML5 validation attributes (such as `required`, `minlength`, `maxlength`, `type="email"`, etc.) in frontend forms. 
 - **Server-Side Only**: All form validation must be handled exclusively on the server-side (Laravel Form Requests/Controllers), and validation error messages should be displayed dynamically in the UI.
+
+## 6. Notifications & Confirmations
+- **Notifications**: Always use **Toastr** (`toastr.success()`, `toastr.error()`, etc.) for flash messages and non-blocking notifications.
+- **Confirmations**: Always use **SweetAlert2** (`Swal.fire()`) for user confirmations (e.g., "Are you sure you want to delete this?"). Avoid using the native browser `confirm()` dialogue.

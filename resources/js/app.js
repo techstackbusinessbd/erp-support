@@ -1,3 +1,12 @@
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+import toastr from 'toastr';
+window.toastr = toastr;
+
+import Swal from 'sweetalert2';
+window.Swal = Swal;
+
 import 'bootstrap';
 import 'admin-lte';
 import 'overlayscrollbars/overlayscrollbars.css'; // Sometimes needed inside js or handled by css
