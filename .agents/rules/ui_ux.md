@@ -15,3 +15,7 @@
 ## 4. Design Consistency (Uniformity)
 - **Global Consistency**: Every page in the project MUST share the exact same design language. 
 - **Elements & Layout**: Colors, button styles, positioning, and overall layout must remain identical and consistent across all screens. Do not introduce new colors or button styles on a per-page basis; always reuse global CSS classes or Blade components.
+
+## 5. Forms & Validation
+- **No HTML Validation**: Do NOT use HTML5 validation attributes (such as `required`, `minlength`, `maxlength`, `type="email"`, etc.) in frontend forms. 
+- **Server-Side Only**: All form validation must be handled exclusively on the server-side (Laravel Form Requests/Controllers), and validation error messages should be displayed dynamically in the UI.
