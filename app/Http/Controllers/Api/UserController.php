@@ -7,10 +7,14 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
+    public function __construct(private UserService $userService)
+    {}
+
     /**
      * Display a listing of the resource.
      */
@@ -25,14 +29,10 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        $data = $request->validated();
-        $data['password'] = bcrypt($data['password']);
-
-        $user = User::create($data);
-
-        if ($request->has('roles')) {
-            $user->assignRole($request->roles);
-        }
+        $user = $this->userService->createUser(
+            $request->validated(),
+            $request->input('roles')
+        );
 
         $user->load('roles');
 
@@ -56,19 +56,11 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        $data = $request->validated();
-
-        if (isset($data['password'])) {
-            $data['password'] = bcrypt($data['password']);
-        } else {
-            unset($data['password']);
-        }
-
-        $user->update($data);
-
-        if ($request->has('roles')) {
-            $user->syncRoles($request->roles);
-        }
+        $user = $this->userService->updateUser(
+            $user,
+            $request->validated(),
+            $request->input('roles')
+        );
 
         $user->load('roles');
 

@@ -8,7 +8,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box text-bg-primary">
             <div class="inner">
-                <h3>150</h3>
+                <h3>{{ $totalTickets }}</h3>
                 <p>Total Tickets</p>
             </div>
             <i class="small-box-icon bi bi-ticket"></i>
@@ -19,7 +19,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box text-bg-warning">
             <div class="inner">
-                <h3>53</h3>
+                <h3>{{ $pendingTickets }}</h3>
                 <p>Pending Tickets</p>
             </div>
             <i class="small-box-icon bi bi-hourglass-split"></i>
@@ -30,7 +30,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box text-bg-success">
             <div class="inner">
-                <h3>97</h3>
+                <h3>{{ $resolvedTickets }}</h3>
                 <p>Resolved Tickets</p>
             </div>
             <i class="small-box-icon bi bi-check-circle"></i>
@@ -41,7 +41,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box text-bg-danger">
             <div class="inner">
-                <h3>15</h3>
+                <h3>{{ $usersCount }}</h3>
                 <p>Users</p>
             </div>
             <i class="small-box-icon bi bi-people"></i>
@@ -67,18 +67,24 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @forelse($recentTickets as $ticket)
                         <tr>
-                            <td>1.</td>
-                            <td>Network issue in 2nd floor</td>
-                            <td><span class="badge text-bg-warning">Pending</span></td>
-                            <td>John Doe</td>
+                            <td>{{ $ticket->id }}.</td>
+                            <td>{{ $ticket->issue }}</td>
+                            <td>
+                                @if($ticket->status === 'Pending')
+                                    <span class="badge text-bg-warning">{{ $ticket->status }}</span>
+                                @else
+                                    <span class="badge text-bg-success">{{ $ticket->status }}</span>
+                                @endif
+                            </td>
+                            <td>{{ $ticket->assignee }}</td>
                         </tr>
+                        @empty
                         <tr>
-                            <td>2.</td>
-                            <td>Printer not working</td>
-                            <td><span class="badge text-bg-success">Resolved</span></td>
-                            <td>Jane Smith</td>
+                            <td colspan="4" class="text-center">No recent tickets</td>
                         </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
