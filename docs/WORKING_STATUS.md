@@ -13,6 +13,7 @@
 - [x] প্রজেক্টের কোর রিকোয়ারমেন্টস: ডাটাবেস ডিজাইন আপডেট (ইউজার, রোল এবং টোকেনের জন্য UUID ব্যবহার)।
 - [x] User Management (ইউজার তৈরি, এডিট, ডিলিট এবং রোল অ্যাসাইন করা)।
 - [x] User Profile API।
+- [x] Web Dashboard Setup (AdminLTE 4, Bootstrap 5, Blade)
 - [ ] (ERP Modules to be defined)
 
 ## 🔴 Phase 3: Testing & Deployment (Pending)
