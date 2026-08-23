@@ -9,3 +9,7 @@ Route::get('/user', function (Request $request) {
 
 Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
+
+Route::middleware(['auth:sanctum', 'role:Admin'])->group(function () {
+    Route::apiResource('users', \App\Http\Controllers\Api\UserController::class);
+});

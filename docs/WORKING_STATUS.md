@@ -11,7 +11,7 @@
 
 ## 🟡 Phase 2: Core Development (In Progress / Pending)
 - [x] প্রজেক্টের কোর রিকোয়ারমেন্টস: ডাটাবেস ডিজাইন আপডেট (ইউজার, রোল এবং টোকেনের জন্য UUID ব্যবহার)।
-- [ ] User Management (ইউজার তৈরি, এডিট, ডিলিট এবং রোল অ্যাসাইন করা)।
+- [x] User Management (ইউজার তৈরি, এডিট, ডিলিট এবং রোল অ্যাসাইন করা)।
 - [ ] User Profile API।
 - [ ] (ERP Modules to be defined)
 
